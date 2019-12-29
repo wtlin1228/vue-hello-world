@@ -135,5 +135,37 @@ export default {
 
 ```
 
+4. Use your module in the components
 
+```javaScript
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
+import { PROJECT_CLEAR_ERROR_MESSAGES } from '../store/mutation-types';
+
+export default {
+  name: 'app',
+  data() {
+    return {
+      name
+    };
+  },
+  methods: {
+    ...mapMutations('projects', {
+      clearError: PROJECT_CLEAR_ERROR_MESSAGES
+    }),
+    ...mapActions('projects', [
+      'createProject'
+    ]),
+  },
+  computed: {
+    ...mapState('projects', {
+      loading: state => state.loading,
+      hasError: state => state.hasError,
+      errorMessages: state => state.errorMessages
+    }),
+    ...mapGetters('projects', {
+      projectName: 'getDecoratedProjectName'
+    }),
+  } 
+}
+```
 
