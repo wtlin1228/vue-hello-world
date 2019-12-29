@@ -9,6 +9,9 @@
 ├── package-lock.json
 ├── package.json
 ├── babel.config.js
+├── .dockerignore
+├── Dockerfile
+├── nginx.conf
 └── src
     ├── api
     ├── assets
@@ -45,6 +48,22 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+## Deployment
+
+### Build docker image
+```
+docker build . -t my-app
+```
+
+### Run docker image
+```
+docker run -d -p 8080:80 my-app
+```
+
+### Stop docker container
+```
+docker stop CONTAINER
+```
 
 ## Third Party
 
