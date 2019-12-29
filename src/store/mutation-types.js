@@ -1,0 +1,6 @@
+// copy this to create new types for your module
+// project
+export const PROJECT_CREATE = "PROJECT_CREATE";
+export const PROJECT_CREATE_SUCCEEDED = "PROJECT_CREATE_SUCCEEDED";
+export const PROJECT_CREATE_FAILED = "PROJECT_CREATE_FAILED";
+export const PROJECT_CLEAR_ERROR_MESSAGES = "PROJECT_CLEAR_ERROR_MESSAGES";
