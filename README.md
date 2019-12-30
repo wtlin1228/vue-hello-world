@@ -40,6 +40,17 @@ npm run serve
 npm run build
 ```
 
+### Deploy to AWS:S3 bucket
+
+Setup
+1. Install `aws-cli`
+2. `aws configure` and setup access key
+ 
+Usage
+```
+npm run deploy
+```
+
 ### Lints and fixes files
 ```
 npm run lint
@@ -48,7 +59,7 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## Deployment
+## Docker
 
 ### Build docker image
 ```
