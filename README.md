@@ -51,6 +51,8 @@ Usage
 npm run deploy
 ```
 
+[Using High-Level (s3) Commands with the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html)
+
 ### Lints and fixes files
 ```
 npm run lint
