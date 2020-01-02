@@ -1,4 +1,8 @@
+import axios from "axios";
+
 export function apiPostProject(payload) {
+  return axios.post("/api/projects", payload);
+
   return new Promise(resolve => {
     setTimeout(() => {
       if (payload.name.length < 5) {

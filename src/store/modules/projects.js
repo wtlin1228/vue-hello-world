@@ -1,6 +1,6 @@
 import {
   PROJECT_CREATE,
-  PROJECT_CREATE_SUCCEEDED,
+  PROJECT_CREATE_SUCCESSFULLY,
   PROJECT_CREATE_FAILED,
   PROJECT_CLEAR_ERROR_MESSAGES
 } from "../mutation-types";
@@ -18,7 +18,7 @@ const actions = {
     commit(PROJECT_CREATE);
     const res = await apiPostProject(payload);
     if (res.status >= 200 && res.status < 300) {
-      commit(PROJECT_CREATE_SUCCEEDED, res);
+      commit(PROJECT_CREATE_SUCCESSFULLY, res);
     } else {
       commit(PROJECT_CREATE_FAILED, res);
     }
@@ -29,7 +29,7 @@ const mutations = {
   [PROJECT_CREATE](state) {
     state.loading = true;
   },
-  [PROJECT_CREATE_SUCCEEDED](state, payload) {
+  [PROJECT_CREATE_SUCCESSFULLY](state, payload) {
     state.name = payload.name;
     state.loading = false;
     state.hasError = false;

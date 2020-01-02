@@ -93,7 +93,7 @@ Flow to create a new module and then use it.
 ```javaScript
 // project
 export const PROJECT_CREATE = "PROJECT_CREATE";
-export const PROJECT_CREATE_SUCCEEDED = "PROJECT_CREATE_SUCCEEDED";
+export const PROJECT_CREATE_SUCCESSFULLY = "PROJECT_CREATE_SUCCESSFULLY";
 export const PROJECT_CREATE_FAILED = "PROJECT_CREATE_FAILED";
 export const PROJECT_CLEAR_ERROR_MESSAGES = "PROJECT_CLEAR_ERROR_MESSAGES";
 ```
@@ -105,7 +105,7 @@ export const PROJECT_CLEAR_ERROR_MESSAGES = "PROJECT_CLEAR_ERROR_MESSAGES";
 ```javaScript
 import {
   PROJECT_CREATE,
-  PROJECT_CREATE_SUCCEEDED,
+  PROJECT_CREATE_SUCCESSFULLY,
   PROJECT_CREATE_FAILED,
   PROJECT_CLEAR_ERROR_MESSAGES
 } from "../mutation-types";
@@ -123,7 +123,7 @@ const actions = {
     commit(PROJECT_CREATE);
     const res = await apiPostProject(payload);
     if (res.status >= 200 && res.status < 300) {
-      commit(PROJECT_CREATE_SUCCEEDED, res);
+      commit(PROJECT_CREATE_SUCCESSFULLY, res);
     } else {
       commit(PROJECT_CREATE_FAILED, res);
     }
@@ -134,7 +134,7 @@ const mutations = {
   [PROJECT_CREATE](state) {
     state.loading = true;
   },
-  [PROJECT_CREATE_SUCCEEDED](state, payload) {
+  [PROJECT_CREATE_SUCCESSFULLY](state, payload) {
     state.name = payload.name;
     state.loading = false;
     state.hasError = false;
@@ -201,3 +201,11 @@ export default {
 }
 ```
 
+### Unit Test - Jest, vue-test-utils
+
+* [Jest](https://jestjs.io/)
+* [vue-test-utils](https://github.com/vuejs/vue-test-utils)
+
+Useful resources:
+* [Setup Environment](https://viblo.asia/p/setting-up-testing-environment-in-vuejs-application-using-jest-eW65G7nJ5DO)
+* [Vue Testing Handbook](https://lmiller1990.github.io/vue-testing-handbook/)

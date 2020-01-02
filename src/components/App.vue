@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div class="info">
+      <h1>{{ description }}</h1>
       <p>{{ projectName }}</p>
       <p>loading: {{ loading }}</p>
       <p>hasError: {{ hasError }}</p>
@@ -24,7 +25,7 @@ export default {
   name: 'app',
   data() {
     return {
-      name
+      description: 'example app'
     };
   },
   methods: {
